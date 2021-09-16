@@ -27,11 +27,10 @@
         ]
     },
     "require": {
-        "symfony/symfony": "^4|^5",
-        "pimcore/pimcore": "^6.6",
-        "dachcom-digital/dynamic-search": "^1.0",
+        "pimcore/pimcore": "^10.1",
+        "dachcom-digital/dynamic-search": "dev-pimcore-x",
         "elasticsearch/elasticsearch": "^7.0",
-        "ongr/elasticsearch-dsl": "~7.1.0"
+        "ocramius/elasticsearch-dsl": "dev-feature/symfony-5-support"
     },
     "require-dev": {
         "codeception/codeception": "~2.4.0",
