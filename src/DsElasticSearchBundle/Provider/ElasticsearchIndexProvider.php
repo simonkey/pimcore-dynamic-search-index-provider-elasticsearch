@@ -50,7 +50,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public static function configureOptions(OptionsResolver $resolver)
+    public static function configureOptions(OptionsResolver $resolver): void
     {
         $defaults = [
             'index'    => function (OptionsResolver $spoolResolver) {
@@ -102,7 +102,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function setOptions(array $options)
+    public function setOptions(array $options): void
     {
         $this->options = $options;
     }
@@ -110,7 +110,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function preConfigureIndex(IndexDocument $indexDocument)
+    public function preConfigureIndex(IndexDocument $indexDocument): void
     {
         $client = $this->clientBuilder->build($this->options);
 
@@ -132,7 +132,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function warmUp(ContextDefinitionInterface $contextDefinition)
+    public function warmUp(ContextDefinitionInterface $contextDefinition): void
     {
         $client = $this->clientBuilder->build($this->options);
 
@@ -152,7 +152,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function coolDown(ContextDefinitionInterface $contextDefinition)
+    public function coolDown(ContextDefinitionInterface $contextDefinition): void
     {
         // commit index stack
         if ($contextDefinition->getContextDispatchType() !== ContextDefinitionInterface::CONTEXT_DISPATCH_TYPE_INDEX) {
@@ -175,7 +175,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function cancelledShutdown(ContextDefinitionInterface $contextDefinition)
+    public function cancelledShutdown(ContextDefinitionInterface $contextDefinition): void
     {
         // @todo required?
     }
@@ -183,7 +183,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function emergencyShutdown(ContextDefinitionInterface $contextDefinition)
+    public function emergencyShutdown(ContextDefinitionInterface $contextDefinition): void
     {
         // @todo required?
     }
@@ -191,7 +191,7 @@ class ElasticsearchIndexProvider implements IndexProviderInterface, PreConfigure
     /**
      * {@inheritdoc}
      */
-    public function processDocument(ContextDefinitionInterface $contextDefinition, IndexDocument $indexDocument)
+    public function processDocument(ContextDefinitionInterface $contextDefinition, IndexDocument $indexDocument): void
     {
         try {
             switch ($contextDefinition->getContextDispatchType()) {

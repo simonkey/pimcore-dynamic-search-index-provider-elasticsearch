@@ -64,7 +64,7 @@ class AggregationFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
-    public function setOptions(array $options)
+    public function setOptions(array $options): void
     {
         $this->options = $options;
     }
@@ -72,7 +72,7 @@ class AggregationFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
@@ -80,7 +80,7 @@ class AggregationFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
-    public function setEventDispatcher(OutputChannelModifierEventDispatcher $eventDispatcher)
+    public function setEventDispatcher(OutputChannelModifierEventDispatcher $eventDispatcher): void
     {
         $this->eventDispatcher = $eventDispatcher;
     }
@@ -88,7 +88,7 @@ class AggregationFilter implements FilterInterface
     /**
      * {@inheritdoc}
      */
-    public function setOutputChannelContext(OutputChannelContextInterface $outputChannelContext)
+    public function setOutputChannelContext(OutputChannelContextInterface $outputChannelContext): void
     {
         $this->outputChannelContext = $outputChannelContext;
     }

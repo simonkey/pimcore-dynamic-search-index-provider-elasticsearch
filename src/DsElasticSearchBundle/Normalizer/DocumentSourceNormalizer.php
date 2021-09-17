@@ -18,7 +18,7 @@ class DocumentSourceNormalizer implements DocumentNormalizerInterface
     /**
      * {@inheritdoc}
      */
-    public static function configureOptions(OptionsResolver $resolver)
+    public static function configureOptions(OptionsResolver $resolver): void
     {
 
     }
@@ -26,7 +26,7 @@ class DocumentSourceNormalizer implements DocumentNormalizerInterface
     /**
      * {@inheritdoc}
      */
-    public function setOptions(array $options)
+    public function setOptions(array $options): void
     {
         $this->options = $options;
     }
